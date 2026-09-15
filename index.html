@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0,
+          maximum-scale=1.0, user-scalable=no">
+
+    <title>School Road</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- Верхняя панель -->
+    <header class="hud">
+
+        <div class="brand">
+            🎒 <span>School Road</span>
+        </div>
+
+        <div class="stats">
+
+            <div>
+                ⭐ <b id="score">0</b>
+            </div>
+
+            <div>
+                📍 <b id="progress">0/12</b>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- Задание сверху -->
+    <div class="mission">
+
+        <span>ПУТЬ ДОМОЙ</span>
+
+        <b id="missionText">
+            Доберись до дома и пройди 12 испытаний
+        </b>
+
+    </div>
+
+
+    <!-- КАРТА -->
+    <main id="world">
+
+        <div class="sun">☀️</div>
+
+        <div class="cloud cloud1">☁️</div>
+        <div class="cloud cloud2">☁️</div>
+
+        <!-- река -->
+        <div class="river river1"></div>
+        <div class="river river2"></div>
+
+
+        <!-- дороги -->
+        <div class="road road1"></div>
+        <div class="road road2"></div>
+        <div class="road road3"></div>
+        <div class="road road4"></div>
+        <div class="road road5"></div>
+
+
+        <!-- здания -->
+        <div class="place school">
+            <div>🏫</div>
+            <span>ШКОЛА</span>
+        </div>
+
+        <div class="place shop">
+            <div>🏪</div>
+            <span>МАГАЗИН</span>
+        </div>
+
+        <div class="place park">
+            <div>🌳</div>
+            <span>ПАРК</span>
+        </div>
+
+        <div class="place home">
+            <div>🏠</div>
+            <span>ДОМ</span>
+        </div>
+
+
+        <!-- деревья -->
+        <div class="trees trees1">🌲 🌲</div>
+        <div class="trees trees2">🌲 🌳 🌲</div>
+        <div class="trees trees3">🌳 🌲</div>
+        <div class="trees trees4">🌲 🌳</div>
+
+
+        <!-- мост -->
+        <div class="bridge bridge1">🌉</div>
+        <div class="bridge bridge2">🌉</div>
+
+
+        <!-- точки испытаний -->
+        <div id="checkpoints"></div>
+
+
+        <!-- школьник -->
+        <div id="player">
+            🧒
+        </div>
+
+    </main>
+
+
+    <!-- управление -->
+    <div class="controls">
+
+        <button data-dir="up">▲</button>
+
+        <div>
+            <button data-dir="left">◀</button>
+            <button data-dir="down">▼</button>
+            <button data-dir="right">▶</button>
+        </div>
+
+    </div>
+
+
+    <!-- сообщение -->
+    <div id="toast"></div>
+
+
+    <!-- ================= START ================= -->
+
+    <section id="intro" class="overlay">
+
+        <div class="panel">
+
+            <div class="hero">
+                🎒
+            </div>
+
+            <div class="eyebrow">
+                ENGLISH ADVENTURE
+            </div>
+
+            <h1>
+                School Road
+            </h1>
+
+            <p>
+                После школы тебе нужно добраться домой.
+                По дороге тебя ждут
+                <b>12 испытаний по английскому.</b>
+            </p>
+
+            <p class="muted">
+                Двигай школьника по карте,
+                подходи к жёлтым точкам
+                и выполняй задания.
+            </p>
+
+            <button
+                id="startBtn"
+                class="main-button">
+                НАЧАТЬ ПУТЬ →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ЗАДАНИЕ ================= -->
+
+    <section
+        id="challenge"
+        class="overlay hidden">
+
+        <div class="panel challenge-panel">
+
+            <div class="challenge-top">
+
+                <span id="challengeNumber">
+                    ИСПЫТАНИЕ 1/12
+                </span>
+
+                <span id="challengeType">
+                    VOCABULARY
+                </span>
+
+            </div>
+
+
+            <h2 id="question">
+                Вопрос
+            </h2>
+
+
+            <div
+                id="answers"
+                class="answers">
+            </div>
+
+
+            <div
+                id="feedback"
+                class="feedback">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ФИНИШ ================= -->
+
+    <section
+        id="finish"
+        class="overlay hidden">
+
+        <div class="panel">
+
+            <div class="hero">
+                🏠✨
+            </div>
+
+            <div class="eyebrow">
+                JOURNEY COMPLETE
+            </div>
+
+            <h1>
+                Ты дома!
+            </h1>
+
+            <p>
+                Ты прошёл все 12 испытаний
+                и закончил свой путь.
+            </p>
+
+            <div class="result">
+
+                <span>
+                    ⭐ Результат
+                </span>
+
+                <b id="finalScore">
+                    0
+                </b>
+
+            </div>
+
+            <button
+                id="againBtn"
+                class="main-button">
+                ПРОЙТИ ЕЩЁ РАЗ
+            </button>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+<h1>
+    Ты дома!
+</h1>
+
+<p>
+    Ты прошёл все 12 испытаний
+    и закончил свой путь.
+</p>
